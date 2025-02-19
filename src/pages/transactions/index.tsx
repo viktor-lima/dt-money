@@ -40,7 +40,7 @@ export function Transactions () {
               <td width="50%">Desenvolvimento de site</td>
               <td>
                 <PriceHigthlight variante="outcome">
-                    - R$ 12.000,
+                    - R$ 12.000,00
                 </PriceHigthlight>
               </td>
               <td>Venda</td>

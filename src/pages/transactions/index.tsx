@@ -33,7 +33,7 @@ export function Transactions () {
                         {priceFormatter.format(row.price)}
                     </PriceHigthlight>
                   </td>
-                  <td>{row.type}</td>
+                  <td>{row.description}</td>
                   <td>{dateFormatter.format(new Date(row.createdAt))}</td>
                 </tr>
               )

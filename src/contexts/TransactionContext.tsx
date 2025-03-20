@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
+import { api } from "../lib/axios";
 
 interface Transaction {
   id: number;
@@ -8,10 +9,18 @@ interface Transaction {
   price: number;
   createdAt: string;
 }
+interface CreatTransactionRequest {
+  description: string;
+  price: number;
+  category: string;
+  type: 'income' | 'outcome';
+}
+
 
 interface TransactionContexType {
   transactions: Transaction[];
   fetchTransactions: (query?: string) => Promise<void>;
+  createTransaction: (data: CreatTransactionRequest) => Promise<void>;
 }
 
 interface TransactionProviderProps{
@@ -26,13 +35,31 @@ export function TransactionProvider({children} : TransactionProviderProps) {
   
 
    async function fetchTransactions ( query?: string) {
-      const url = new URL('http://localhost:3333/transactions')
-      if(query) {
-        url.searchParams.append('q', query)
-      }
-      const response = await fetch(url)
-      const data = await response.json();
-      setTransactions(data)
+      const response = await api.get('/transactions', {
+        params:{
+          _sort: 'createdAt',
+          _order: 'desc',
+          q: query
+        }
+      })
+      setTransactions(response.data)
+    }
+
+    async function createTransaction(request: CreatTransactionRequest) {
+      const {
+        description,
+        price,
+        category,
+        type
+      } = request;
+      const response = await api.post('/transactions', {
+        description,
+        price,
+        category,
+        type,
+        createdAt: new Date()
+      })
+      setTransactions(state => [response.data, ...state])
     }
   
     useEffect(() => {
@@ -40,7 +67,7 @@ export function TransactionProvider({children} : TransactionProviderProps) {
     }, [])
 
   return (
-    <transactionContext.Provider value={{transactions, fetchTransactions,}}>
+    <transactionContext.Provider value={{transactions, fetchTransactions, createTransaction,}}>
       {children}
     </transactionContext.Provider>
   )

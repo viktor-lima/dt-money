@@ -25,60 +25,28 @@
       "createdAt": "2025-02-24T10:15:30.100Z"
     },
     {
-      "id": 4,
-      "description": "Assinatura de ferramenta de design",
-      "type": "outcome",
-      "category": "Software",
-      "price": 90,
-      "createdAt": "2025-02-23T08:50:45.210Z"
-    },
-    {
-      "id": 5,
-      "description": "Pagamento de freela para API de login",
-      "type": "outcome",
-      "category": "Serviços terceirizados",
-      "price": 800,
-      "createdAt": "2025-02-22T16:40:12.500Z"
-    },
-    {
-      "id": 6,
-      "description": "Venda de sistema de gestão para restaurante",
-      "type": "income",
+      "description": "Desenvolvimento App",
+      "price": 10000,
       "category": "Venda",
-      "price": 12000,
-      "createdAt": "2025-02-21T11:22:30.700Z"
-    },
-    {
-      "id": 7,
-      "description": "Compra de licença de software",
-      "type": "outcome",
-      "category": "Software",
-      "price": 1200,
-      "createdAt": "2025-02-20T09:10:05.600Z"
-    },
-    {
-      "id": 8,
-      "description": "Manutenção de site de e-commerce",
       "type": "income",
-      "category": "Serviços",
-      "price": 2500,
-      "createdAt": "2025-02-19T14:30:18.900Z"
+      "createdAt": "2025-03-19T23:34:46.345Z",
+      "id": 4
     },
     {
-      "id": 9,
-      "description": "Compra de um novo notebook",
-      "type": "outcome",
-      "category": "Equipamento",
-      "price": 300,
-      "createdAt": "2025-02-18T12:45:22.110Z"
-    },
-    {
-      "id": 10,
-      "description": "Venda de aplicativo mobile para empresa",
-      "type": "income",
+      "description": "Desenvolvimento web",
+      "price": 10000,
       "category": "Venda",
-      "price": 22000,
-      "createdAt": "2025-02-17T18:10:33.250Z"
+      "type": "income",
+      "createdAt": "2025-03-20T00:10:14.923Z",
+      "id": 5
+    },
+    {
+      "description": "Coxinha",
+      "price": 4,
+      "category": "Alimentação",
+      "type": "outcome",
+      "createdAt": "2025-03-20T00:10:28.786Z",
+      "id": 6
     }
   ]
 }
